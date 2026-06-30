@@ -1,0 +1,2 @@
+"""StartupPilot AI backend package."""
+
