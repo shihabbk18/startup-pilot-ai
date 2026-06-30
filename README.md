@@ -51,6 +51,19 @@ docker compose up --build
 3. API runs at `http://localhost:8000/api/v1`.
 4. Frontend runs at `http://localhost:3000`.
 
+## Deployment Note
+
+Do not deploy this repository as a plain GitHub Pages static site if you need AI generation.
+GitHub Pages can only host static files; it cannot run the FastAPI backend or the Next.js
+`POST /api/generate` route that calls OpenAI.
+
+Recommended deployment:
+
+- Frontend and model route: Vercel, with `frontend` as the project root.
+- Backend API and workers: Railway, using `docker/backend.Dockerfile`.
+- Database and cache: Railway PostgreSQL and Redis.
+- File storage: Supabase Storage.
+
 ## Current Implementation
 
 This initial production scaffold includes:
